@@ -1,5 +1,5 @@
 const withTypescript = require('@zeit/next-typescript')
-const withLessExcludeAntd = require("./next-less.config.js")
+const withStylesExcludeAntd = require("./next-styles.config.js")
 
 // choose your own modifyVars
 const modifyVars = require("./utils/modifyVars")
@@ -8,7 +8,7 @@ if (typeof require !== 'undefined') {
   require.extensions['.less'] = (file) => {}
 }
 
-module.exports = withTypescript(withLessExcludeAntd({
+module.exports = withTypescript(withStylesExcludeAntd({
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,

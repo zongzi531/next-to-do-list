@@ -96,7 +96,7 @@ module.exports = (nextConfig = {}) => {
         exclude: /node_modules/,
         use: options.defaultLoaders.less
       })
-    
+
       // 我们禁用了antd的cssModules
       config.module.rules.push({
         test: /\.less$/,
@@ -155,3 +155,5 @@ module.exports = withLessExcludeAntd({
 
 
 __现在执行以下项目，看是否可以了呢？：）__如果有问题欢迎在下方提出。
+
+## New version 0.4.2 capture lot of warnings [#250](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250)

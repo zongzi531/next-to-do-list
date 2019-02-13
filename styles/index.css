@@ -1,0 +1,204 @@
+ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+li {
+  list-style: none;
+}
+button {
+  outline: none !important;
+}
+#__next {
+  margin: 0 4px;
+  padding: 60px 0 20px;
+  font-family: 'Monospaced Number','Chinese Quote','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+.list-wrapper {
+  font-size: 0;
+}
+.list-text {
+  text-align: left;
+  margin: 0 60px 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+.removebtn {
+  float: right;
+}
+.help-note {
+  text-align: left;
+  font-size: 14px;
+}
+.list-item {
+  position: relative;
+  padding-left: 50px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+.through {
+  text-decoration: line-through;
+  color: #ccc;
+}
+.anticon-close {
+  position: absolute;
+  padding: 18px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  color: #d9d9d9;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+.anticon-close:hover {
+  color: #ff4d4f;
+}
+.btn-add {
+  font-size: 12px;
+}
+.input-group-addon,
+.ant-input-wrapper i {
+  cursor: pointer;
+}
+.title {
+  position: relative;
+}
+.by {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.btn-color-type {
+  margin: 0 6px;
+}
+.colorBtn {
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.ant-btn.btn-default.active,
+.ant-btn.btn-default:hover,
+.ant-btn.btn-default {
+  background-color: #d4d4d4;
+  color: #8c8c8c;
+  border-color: inherit;
+}
+.ant-btn.btn-primary.active,
+.ant-btn.btn-primary:hover,
+.ant-btn.btn-primary {
+  background-color: #204d74;
+  color: #122b40;
+  border-color: inherit;
+}
+.ant-btn.btn-success.active,
+.ant-btn.btn-success:hover,
+.ant-btn.btn-success {
+  background-color: #398439;
+  color: #255625;
+  border-color: inherit;
+}
+.ant-btn.btn-info.active,
+.ant-btn.btn-info:hover,
+.ant-btn.btn-info {
+  background-color: #269abc;
+  color: #1b6d85;
+  border-color: inherit;
+}
+.ant-btn.btn-warning.active,
+.ant-btn.btn-warning:hover,
+.ant-btn.btn-warning {
+  background-color: #d58512;
+  color: #985f0d;
+  border-color: inherit;
+}
+.ant-btn.btn-danger.active,
+.ant-btn.btn-danger:hover,
+.ant-btn.btn-danger {
+  background-color: #ac2925;
+  color: #761c19;
+  border-color: inherit;
+}
+.ant-btn.btn-color-type {
+  border: 1px solid transparent;
+}
+.nav-justified {
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  margin-top: 10px;
+}
+.tabs-bottom {
+  border-radius: 4px !important;
+  border: 1px solid #d9d9d9 !important;
+}
+.nav-justified li a {
+  font-size: 14px;
+  text-align: left !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+.list-ul {
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.list-ul li:last-child {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.control-icon {
+  position: absolute;
+  padding: 18px;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+.anticon-star-o:hover {
+  color: #131b23;
+}
+.anticon-star {
+  color: #ccc;
+}
+.anticon-star:hover {
+  color: #949494;
+}
+.checkbox-havedo:hover,
+.checkbox-havedo:hover ~ .through {
+  color: #8e8d8d;
+}
+.glyphicon-option-vertical {
+  position: absolute;
+  top: 15px;
+  left: 5px;
+}
+.glyphicon-option-vertical {
+  cursor: move;
+}
+.list-ul .changeText {
+  position: absolute;
+  top: 9px;
+  left: 50px;
+  width: calc(100% - 110px);
+  z-index: 1;
+}
+.ant-badge.badge {
+  margin-left: 4px;
+  vertical-align: top;
+}
+.form-group {
+  text-align: left;
+}
+.ant-input-group-wrapper {
+  margin: 10px 0;
+}
