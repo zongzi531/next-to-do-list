@@ -1,0 +1,24 @@
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint-react",
+        "tslint-config-prettier"
+    ],
+    "linterOptions": {
+        "include": [
+            "src/**/*"
+        ],
+        "exclude": [
+            "src/server/**/*"
+        ]
+    },
+    "rules": {
+        "semicolon": [
+            true,
+            "never"
+        ],
+        "object-literal-sort-keys": false,
+        "ordered-imports": false,
+        "no-console": false
+    }
+}

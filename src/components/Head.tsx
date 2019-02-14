@@ -1,5 +1,6 @@
+import * as React from 'react'
 import Head from 'next/head'
-import '../styles/index.css'
+import '../static/styles/index.css'
 
 type MyHead = () => JSX.Element
 

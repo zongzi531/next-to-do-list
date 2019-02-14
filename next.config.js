@@ -2,7 +2,7 @@ const withTypescript = require('@zeit/next-typescript')
 const withStylesExcludeAntd = require("./next-styles.config.js")
 
 // choose your own modifyVars
-const modifyVars = require("./utils/modifyVars")
+const modifyVars = require("./src/utils/modifyVars")
 
 if (typeof require !== 'undefined') {
   require.extensions['.less'] = (file) => {}
