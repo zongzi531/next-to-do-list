@@ -1,12 +1,9 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import './mongo';
-import router from './controllers/api';
+import graphql from './graphql';
 
 const app = express();
-
-app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(morgan('combined'));
 
@@ -17,6 +14,6 @@ app.use('*', (req, res, next) => {
   next();
 });
 
-app.use(router);
+app.use('/graphql', graphql);
 
 export default app;

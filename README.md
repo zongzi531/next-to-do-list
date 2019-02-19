@@ -1,6 +1,6 @@
 # Next To Do List
 
-> A using Next.js and TypeScript builded To Do List SSR Project.
+> A using Next.js, TypeScript, GraphQL builded To Do List SSR Project.
 
 ## How to Next.js and Antd integration ？
 

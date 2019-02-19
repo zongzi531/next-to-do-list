@@ -1,9 +1,7 @@
 import fetch from 'isomorphic-unfetch'
-import { stringify } from 'qs'
 import { message as antdMessage } from 'antd'
 
-// const BASEURL = 'http://localhost:3000'
-// const BASEURL = ''
+const uri = '/graphql'
 
 interface IResponseError extends Error {
   response?: Response
@@ -31,7 +29,7 @@ const parseJSON = (response: Response) => {
   return response.json()
 }
 
-const responseProxy = (response: IResponse) => {
+const responseProxy = ({ data: response }: { data: IResponse }) => {
   const { code, message } = response
   if (code !== SUCCESS) {
     antdMessage.warning(message)
@@ -40,13 +38,22 @@ const responseProxy = (response: IResponse) => {
   return response
 }
 
-export const post = (uri: string, params: object) => {
-  const body = stringify(params)
-  // return fetch(BASEURL + uri, {
+export const post = (operationName: string, variables: object) => {
+  const query = `query ${operationName} {
+    code
+    message
+    token
+  }`
+  const body = JSON.stringify({
+    operationName,
+    query,
+    variables,
+  })
   return fetch(uri, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
     },
     body
   })

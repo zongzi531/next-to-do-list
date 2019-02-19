@@ -6,6 +6,7 @@ import Head from '../components/Head'
 import { IFormItem, FormItems, AntdFormAndRouterProps } from '../interfaces'
 import { VIEWSTITLE } from '../config'
 import { post } from '../fetch'
+import API from '../server/graphql/api'
 
 const FormItem = Form.Item
 
@@ -40,12 +41,12 @@ class SignIn extends React.Component<AntdFormAndRouterProps, ISignInState> {
     event.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-          post('/login', values)
-            .then(res => {
-              const { token } = res
-              sessionStorage.setItem('token', token)
-              Router.push('/')
-            })
+        post(API.LOGIN, values)
+          .then(res => {
+            const { token } = res
+            sessionStorage.setItem('token', token)
+            Router.push('/')
+          })
       }
     })
   }
