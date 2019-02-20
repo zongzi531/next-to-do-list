@@ -1,5 +1,9 @@
 enum API {
   LOGIN = 'LOGIN',
+  REGIST = 'REGIST',
+  ADDTODO = 'ADDTODO',
+  GETTODOLIST = 'GETTODOLIST',
+  UPDATETODO = 'UPDATETODO',
 }
 
 export default API;

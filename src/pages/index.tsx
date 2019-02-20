@@ -10,6 +10,7 @@ import Head from '../components/Head'
 import { VIEWSTITLE, VIEWSAUTHOR, NUMBER, STRING, TODOSLABEL, NOTE, COLOR } from '../config'
 import { IToDoS } from '../components/ToDoItem'
 import { post } from '../fetch'
+import API from '../server/graphql/api'
 
 interface IListWrapperState {
   inputText: string
@@ -60,7 +61,14 @@ export default class Home extends React.Component<RouterProps, IListWrapperState
           color: this.state.color,
           content
         }
-        post('/addTodo', params)
+        post({
+          operationName: API.ADDTODO,
+          query: `mutation ${API.ADDTODO} {
+            code
+            message
+          }`,
+          variables: params,
+        })
           .then(res => {
             message.info(res.message)
             this.getTodoList()
@@ -85,7 +93,14 @@ export default class Home extends React.Component<RouterProps, IListWrapperState
         content,
         status
       }
-      post('/updateTodo', params)
+      post({
+        operationName: API.UPDATETODO,
+        query: `mutation ${API.UPDATETODO} {
+          code
+          message
+        }`,
+        variables: params,
+      })
         .then(res => {
           message.info(res.message)
           this.getTodoList()
@@ -113,7 +128,14 @@ export default class Home extends React.Component<RouterProps, IListWrapperState
       content,
       status
     }
-    post('/updateTodo', params)
+    post({
+      operationName: API.UPDATETODO,
+      query: `mutation ${API.UPDATETODO} {
+        code
+        message
+      }`,
+      variables: params,
+    })
       .then(res => {
         message.info(res.message)
         this.getTodoList()
@@ -131,7 +153,14 @@ export default class Home extends React.Component<RouterProps, IListWrapperState
       content,
       status: 'DELETED'
     }
-    post('/updateTodo', params)
+    post({
+      operationName: API.UPDATETODO,
+      query: `mutation ${API.UPDATETODO} {
+        code
+        message
+      }`,
+      variables: params,
+    })
       .then(res => {
         message.info(res.message)
         this.getTodoList()
@@ -171,7 +200,26 @@ export default class Home extends React.Component<RouterProps, IListWrapperState
 
   public getTodoList = () => {
     const token = sessionStorage.getItem('token')
-    post('/getTodoList', { token })
+    post({
+      operationName: API.GETTODOLIST,
+      query: `query ${API.GETTODOLIST} {
+        code
+        message
+        finishedList {
+          todoId
+          color
+          content
+          status
+        }
+        unfinishedList {
+          todoId
+          color
+          content
+          status
+        }
+      }`,
+      variables: { token },
+    })
       .then(res => {
         const { finishedList, unfinishedList } = res
         this.setState({

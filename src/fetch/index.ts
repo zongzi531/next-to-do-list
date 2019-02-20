@@ -38,12 +38,15 @@ const responseProxy = ({ data: response }: { data: IResponse }) => {
   return response
 }
 
-export const post = (operationName: string, variables: object) => {
-  const query = `query ${operationName} {
-    code
-    message
-    token
-  }`
+export const post = ({
+  operationName,
+  query,
+  variables,
+}: {
+  operationName: string,
+  query: string,
+  variables: object
+}) => {
   const body = JSON.stringify({
     operationName,
     query,

@@ -41,7 +41,15 @@ class SignIn extends React.Component<AntdFormAndRouterProps, ISignInState> {
     event.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        post(API.LOGIN, values)
+        post({
+          operationName: API.LOGIN,
+          query: `query ${API.LOGIN} {
+            code
+            message
+            token
+          }`,
+          variables: values,
+        })
           .then(res => {
             const { token } = res
             sessionStorage.setItem('token', token)

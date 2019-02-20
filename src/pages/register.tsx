@@ -6,6 +6,7 @@ import Head from '../components/Head'
 import { IFormItem, FormItems, AntdFormAndRouterProps } from '../interfaces'
 import { VIEWSTITLE, NOTE } from '../config'
 import { post } from '../fetch'
+import API from '../server/graphql/api'
 
 const FormItem = Form.Item
 
@@ -40,7 +41,14 @@ class Register extends React.Component<AntdFormAndRouterProps, IRegisterState> {
     event.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        post('/regist', values)
+        post({
+          operationName: API.REGIST,
+          query: `mutation ${API.REGIST} {
+            code
+            message
+          }`,
+          variables: values,
+        })
           .then(res => {
             message.info(res.message)
           })
